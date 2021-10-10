@@ -46,3 +46,33 @@ function showMonthName (month) {
 };
 
 showMonthName(5);
+
+// task4
+let obj = {};
+function showUser(id) {
+    if (id < 0) {
+        throw new Error ("You enter inccorect data"); 
+    };
+    return obj.id = id;
+};
+console.log(showUser(5));
+
+function showUsers(ids) {
+    let object = {};
+    let result = [];
+    for (let i = 0; i < ids.length; i++) {
+        try {
+            if (ids[i] < 0 ) throw new Error ("ID must not be negative: " + ids[i]);
+        } catch (error) {
+            console.log(error);
+        }
+        object.id = ids[i];
+        console.log(object);
+        // result[i] = object;
+        result.push(object);
+        // console.log(result);
+    };
+    return console.log(result);   
+};
+
+showUsers([7, 44, -1, 22]);
