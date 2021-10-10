@@ -13,3 +13,21 @@ try {
 } catch (exception) {
     console.log(exception.stack);
 };
+
+// task2
+const age = +prompt ("Введіть свій вік", "18");
+function checkAge(age) {
+    if (age === 0) {
+        throw new Error ("The field is empty! Please enter your age");
+    } else if (isNaN(age) || (age < 0)) {
+        throw new Error ("You enter inccorect data"); 
+    } else if (age < 14) {
+        console.log("You cann't watch a movie");
+    } else console.log("You can watch a movie");
+};
+
+try {
+    checkAge(age);
+} catch (exception) {
+    console.error(exception.stack);
+};
