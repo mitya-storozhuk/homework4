@@ -31,3 +31,18 @@ try {
 } catch (exception) {
     console.error(exception.stack);
 };
+
+// task3
+class MonthException {
+    constructor(message) {
+      this.name = message;
+    };
+};
+
+const monthes = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+function showMonthName (month) {
+    if ((month <= 0) || (month >= 13)) throw new Error ("Incorrect month number");
+    return console.log(monthes[month - 1]);
+};
+
+showMonthName(5);
