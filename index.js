@@ -64,14 +64,14 @@ function showUsers(ids) {
         try {
             if (ids[i] < 0 ) {
                 throw new Error ("ID must not be negative: " + ids[i]);
-            } else 
+            }; 
             object.id = ids[i];
             result.push(object);
         } catch (error) {
             console.log(error);
         };
     };
-    return console.log(result);   
+    return result;   
 };
 
-showUsers([7, 44, -1, 22]);
+console.log(showUsers([7, 44, -1, 22]));
