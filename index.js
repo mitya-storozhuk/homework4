@@ -58,19 +58,18 @@ function showUser(id) {
 console.log(showUser(5));
 
 function showUsers(ids) {
-    let object = {};
     let result = [];
     for (let i = 0; i < ids.length; i++) {
+        let object = {};
         try {
-            if (ids[i] < 0 ) throw new Error ("ID must not be negative: " + ids[i]);
+            if (ids[i] < 0 ) {
+                throw new Error ("ID must not be negative: " + ids[i]);
+            } else 
+            object.id = ids[i];
+            result.push(object);
         } catch (error) {
             console.log(error);
-        }
-        object.id = ids[i];
-        console.log(object);
-        // result[i] = object;
-        result.push(object);
-        // console.log(result);
+        };
     };
     return console.log(result);   
 };
